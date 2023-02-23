@@ -49,7 +49,7 @@ public final class ReusablePool{
 	 * El cliente libera una instancia del objeto Reusable y se guarda en el Pool para poder ser utilizada por otro cliente.
 	 * @param r una instancia objeto reusable
 	 * @exception DuplicatedInstanceException si el objeto reusable ya existe en el pool
-	 * 
+	 * 			pool.releaseReusable(r1);
 	 */
 
 	public void releaseReusable(Reusable r) throws DuplicatedInstanceException {
