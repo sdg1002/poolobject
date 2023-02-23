@@ -38,11 +38,6 @@ public class ReusablePoolTest {
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#getInstance()}.
-	 * 	public static ReusablePool getInstance(){
-		if (instance == null)
-			instance = new ReusablePool(2);
-		return instance; 
-	}
 	 */
 	@Test
 	public void testGetInstance() {
