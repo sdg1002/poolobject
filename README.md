@@ -52,11 +52,33 @@ https://github.com/clopezno/poolobject. El nuevo repositorio tiene que ser públ
 
 **¿Se ha realizado trabajo en equipo?**
 
+Si se ha realizado el trabajo en equipo, ambos hemos realizado aportaciones a todas las partes de la práctica. 
+Empezando por el repositorio y los servicios de pruebas como Codecov.io, hemos aprendido e investigado como utilizarlos y como trabajar sobre ellos.
+Siguiendo por la creación de los test y mejoras a posteriori, en el historial de commit de GitHub se puede ver que los dos hemos colaborado. 
+Además de que en la segunda versión de los test, los dos hemos influido y mejorado, para conseguir una mayor cobertura. 
+A parte de este fichero-informe de la práctica en el que hemos opinado y escrito ambos para poder explicar toda la cobertura de la práctica y los servicios utilizados.
+
 **¿Tiene calidad el conjunto de pruebas disponibles?**
+
+////Cuantificar con codecov
 
 **¿Cuál es el esfuerzo invertido en realizar la actividad?**
 
+A lo largo de esta práctica hay que tener en cuenta dos medidas de tiempo principales.
+- La primera las horas de clase: 4 horas aproximadamente.
+- Y la segunda con horas fuera de clase: 8-9 horas aproximadamente.
+
+De estas 12 horas de realización de la actividad, media hora fue la explicación durante la clase y quizas una hora u hora y media en la instalación del software necesario, enlazar y registrar en todas //buscar.
+
+Después entre cerca 8 horas entre trabajo individual de cada miembro y en común fueron realización del código y pruebas en codecov.io. 
+
+Y finalmente, mínimo, fueron dos horas para realizar el informe de la activdad en el README, actual.
+
+El esfuerzo, podemos dedudir que no fue desmedido, es una actividad más que asesible con nuestro nivel actual de conocimiento informática, pero también podemos decir que cada apartado, cada test, ha necesitado su tiempo y hemos invertido en él. Así que el esfuerzo invertido podemos deducir que está en línea con la profundidadd del trabajo. //mejorar
+
 **¿Cuál es el número de fallos encontrados en el código?**
+
+//cuantificar
 
 ## Software
 
