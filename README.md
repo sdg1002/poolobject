@@ -1,4 +1,4 @@
-<h1 align="center"> Medir para caracterizar entidades de productos y procesos software</h1> 
+<h1 align="center">PG_C01 Monitorización del proceso de pruebas con Git-Travis-Codecov</h1>
 
 
 [![Java CI](https://github.com/sdg1002/poolobject/actions/workflows/ci.yml/badge.svg)](https://github.com/sdg1002/poolobject/actions/workflows/ci.yml) [![Build Status](https://app.travis-ci.com/sdg1002/poolobject.svg?branch=master)](https://app.travis-ci.com/sdg1002/poolobject) [![codecov](https://codecov.io/gh/sdg1002/poolobject/branch/master/graph/badge.svg)](https://codecov.io/gh/sdg1002/poolobject)
@@ -12,8 +12,12 @@
 
 ## Índice
 
-
-* [Authors](Autores)
+* [Título](https://github.com/sdg1002/poolobject/edit/master/README.md#pg_c01-monitorizaci%C3%B3n-del-proceso-de-pruebas-con-git-travis-codecov)
+* [Autores](https://github.com/sdg1002/poolobject/edit/master/README.md#autores)
+* [Índice](https://github.com/sdg1002/poolobject/edit/master/README.md#%C3%ADndice)
+* [Objetivos de la práctica](https://github.com/sdg1002/poolobject/edit/master/README.md#objetivos-de-la-pr%C3%A1ctica) 
+* [Enunciado](https://github.com/sdg1002/poolobject/edit/master/README.md#enunciado)
+* [Software](https://github.com/sdg1002/poolobject/edit/master/README.md#software)
 
 
 ## Objetivos de la práctica
@@ -46,6 +50,13 @@ https://github.com/clopezno/poolobject. El nuevo repositorio tiene que ser públ
 
 ## Preguntas
 
+**¿Se ha realizado trabajo en equipo?**
+
+**¿Tiene calidad el conjunto de pruebas disponibles?**
+
+**¿Cuál es el esfuerzo invertido en realizar la actividad?**
+
+**¿Cuál es el número de fallos encontrados en el código?**
 
 ## Software
 
