@@ -82,3 +82,7 @@ El esfuerzo, podemos dedudir que no fue desmedido, es una actividad más que ase
 
 ## Software
 
+- Github
+- Codecov.io
+- Eclipse
+
