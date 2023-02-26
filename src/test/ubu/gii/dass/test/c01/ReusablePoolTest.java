@@ -1,6 +1,9 @@
 /**
- * 
- */
+
+*
+
+*/
+
 package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.*;
@@ -8,21 +11,29 @@ import static org.junit.Assert.*;
 import java.util.logging.Logger;
 
 import org.junit.After;
+
 import org.junit.Before;
+
 import org.junit.Test;
 
 import ubu.gii.dass.c01.DuplicatedInstanceException;
+
 import ubu.gii.dass.c01.NotFreeInstanceException;
+
 import ubu.gii.dass.c01.Reusable;
+
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
+ * 
  * @author Ana Salces Mansilla
- * @author Santiago Diaz Gomez-Guillamon
- *
+ * 
+ * @author Santiago Gomez Diaz-Guillamon
+ * 
  */
+
 public class ReusablePoolTest {
-	
+
 	ReusablePool pool1 = null;
 	Reusable r1, r2, r3 = null;
 
@@ -92,44 +103,51 @@ public class ReusablePoolTest {
 		assertEquals(r3, null);
 
 		try {
+
 			r1 = pool1.acquireReusable();
 			r2 = pool1.acquireReusable();
 			assertTrue(r1 instanceof Reusable);
 			assertTrue(r2 instanceof Reusable);
 
 		} catch (Exception NotFreeInstanceException) {
-			fail(" No se adquieren correctamente los reutilizables");
+			fail();
 		}
 
 		try {
 			r3 = pool1.acquireReusable();
 		} catch (Exception NotFreeInstanceException) {
-			System.out.print(" Test AcquireReusable se realiza correctamente");
+			System.out.print("Falla correctamente");
 		}
 
 	}
 
-	/**
-	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
-	 */
 	@Test
+
 	public void testReleaseReusable() {
-		//fail("Not yet implemented");
-		ReusablePool pool,pool2;
-	    pool = ReusablePool.getInstance();
-	    pool2 = ReusablePool.getInstance();
-	    Reusable r1,r2;
-	    try {
-		    r1 = pool.acquireReusable();
-			r2 = pool.acquireReusable();
-	    }catch(Exception DuplicatedInstanceException){
-	    	fail("Deberían existir más instancias");
-	    }
-	    try {
-		    r1 = pool2.acquireReusable();
-			r1 = pool2.acquireReusable();
-		    }catch(Exception DuplicatedInstanceException){
-		    	System.out.println("Test ReleaseReusable se realiza correctamente");
-		    }
+		assertEquals(r1, null);
+		assertEquals(r2, null);
+
+		try {
+			r1 = pool1.acquireReusable();
+			assertNotEquals(r1, null);
+			pool1.releaseReusable(r1);
+
+			r2 = pool1.acquireReusable();
+			assertNotEquals(r2, null);
+			pool1.releaseReusable(r2);
+
+		} catch (Exception DuplicatedInstanceException) {
+			fail();
+		}
+
+		try {
+			assertNotEquals(r1, null);
+			pool1.releaseReusable(r1);
+
+		} catch (Exception DuplicatedInstanceException) {
+			System.out.println("gut");
+		}
+
 	}
+
 }
