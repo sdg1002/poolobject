@@ -1,6 +1,6 @@
 /**
 * @author Ana Salces Mansilla
-* @author Santiago Diaz Gome-Guillamon
+* @author Santiago Diaz Gomez-Guillamon
 *
 */
 
@@ -17,39 +17,40 @@ import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
- * 
+ * Test de pruebas sobre la clase ReusablePool
+ *
  * @author Ana Salces Mansilla
- * 
  * @author Santiago Gomez Diaz-Guillamon
  * 
  */
 
 public class ReusablePoolTest {
 
+	/**
+	*Variales globales para el uso de los test
+	*/
 	ReusablePool pool1 = null;
 	Reusable r1, r2, r3 = null;
 
 	/**
-	 * 
+	 * Metodo que se ejecuta antes de cada test, instanciando la variable pool1
 	 * @throws java.lang.Exception
 	 * 
 	 */
 
 	@Before
-
 	public void setUp() throws Exception {
 		pool1 = ReusablePool.getInstance();
 
 	}
 
 	/**
-	 * 
+	 * Metodo que se ejecuta después de cada test, vacia todas las variables
 	 * @throws java.lang.Exception
 	 * 
 	 */
 
 	@After
-
 	public void tearDown() throws Exception {
 		pool1 = null;
 		r1 = null;
@@ -63,7 +64,6 @@ public class ReusablePoolTest {
 	 */
 	
 	@Test
-
 	public void testGetInstance() {
 		
 		pool1 = ReusablePool.getInstance();
@@ -83,14 +83,15 @@ public class ReusablePoolTest {
 	 */
 
 	@Test
-
 	public void testAcquireReusable() {
 
+		//comprueba que todas las variables estan a null
 		assertEquals(r1, null);
 		assertEquals(r2, null);
 		assertEquals(r3, null);
 
 
+		// comprueba que los objetos r1 y r2 son de tipo Reusable, si no es así, salta una exception
 		try {
 
 			r1 = pool1.acquireReusable();
@@ -101,7 +102,7 @@ public class ReusablePoolTest {
 		} catch (Exception NotFreeInstanceException) {
 			fail("No se adquieren instancias correctamente");
 		}
-
+		//Comrpueba que r3 no ha podido adquirir reusable para después añadir un mensaje de error
 		try {
 			r3 = pool1.acquireReusable();
 		} catch (Exception NotFreeInstanceException) {
@@ -110,14 +111,17 @@ public class ReusablePoolTest {
 
 	}
 
+	/**
+	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#ReleaseReusable()}.
+	 * 
+	 */
 	@Test
-
 	public void testReleaseReusable() {
+		//se comprueba que las variables estan a null
 		assertEquals(r1, null);
 		assertEquals(r2, null);
 		
-		
-
+		//comprueba que r1 y r2 sea de tipo reusable y no nulo, , si no es así, salta una exception
 		try {
 			r1 = pool1.acquireReusable();			
 			assertNotEquals(r1, null);
@@ -132,7 +136,8 @@ public class ReusablePoolTest {
 		} catch (Exception DuplicatedInstanceException) {
 			fail("No se liberan elementos correctamente");
 		}
-
+		
+		// comprueba que r1 no esta a nulo y que al hacer un nuevo "releaseReusable", esto resulta en que esta duplicado
 		try {
 			assertNotEquals(r1, null);
 			pool1.releaseReusable(r1);
