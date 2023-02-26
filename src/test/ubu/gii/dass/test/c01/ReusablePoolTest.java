@@ -17,10 +17,15 @@ import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
- * @author alumno
+ * @author Ana Salces Mansilla
+ * @author Santiago Diaz Gomez-Guillamon
  *
  */
 public class ReusablePoolTest {
+	
+	ReusablePool pool1, pool2 = null;
+	Reusable r1,r2,r3 = null;
+	
 
 	/**
 	 * @throws java.lang.Exception
@@ -46,7 +51,7 @@ public class ReusablePoolTest {
 		  assertNotEquals(pool1, null);
 		  // Seguros de que no vale null, comprobamos ahora que la creación haya sido correcta
 		  assertTrue(pool1 instanceof ReusablePool);	  
-	}
+		  }
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
@@ -54,7 +59,6 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testAcquireReusable() {
-		//fail("Not yet implemented");
 		ReusablePool pool = ReusablePool.getInstance(); 
 		//
 		Reusable r1,r2,r3;
@@ -70,7 +74,6 @@ public class ReusablePoolTest {
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
-	 *
 	 */
 	@Test
 	public void testReleaseReusable() {
