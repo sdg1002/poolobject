@@ -34,20 +34,30 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testGetInstance() {
-		//fail("Not yet implemented");
 		  ReusablePool pool;
 		  pool = ReusablePool.getInstance();
 		  assertNotEquals(pool, null);
 		  
 	}
-	/**
-	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
-	 */
+
+     	/ ** Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
+     	 *
+    	 */
 	@Test
 	public void testAcquireReusable() {
-		fail("Not yet implemented");
-	}
 
+		ReusablePool pool = ReusablePool.getInstance(); 
+		//
+		Reusable r1,r2,r3;
+		try {
+		    r1 = pool.acquireReusable();
+		    r2 = pool.acquireReusable();
+		    r3 = pool.acquireReusable();
+		}catch(Exception NotFreeInstanceException){
+		    System.out.println("Todo correcto");
+		}
+
+	    }
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
 	 */
