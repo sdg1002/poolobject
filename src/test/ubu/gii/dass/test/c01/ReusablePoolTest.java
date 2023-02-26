@@ -5,9 +5,16 @@ package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.*;
 
+import java.util.logging.Logger;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import ubu.gii.dass.c01.DuplicatedInstanceException;
+import ubu.gii.dass.c01.NotFreeInstanceException;
+import ubu.gii.dass.c01.Reusable;
+import ubu.gii.dass.c01.ReusablePool;
 
 /**
  * @author alumno
@@ -34,32 +41,55 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testGetInstance() {
+		//fail("Not yet implemented");
 		  ReusablePool pool;
 		  pool = ReusablePool.getInstance();
 		  assertNotEquals(pool, null);
 		  
-	}
+		  }
 
-     	/ ** Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
-     	 *
-    	 */
+	/**
+	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
+	 * 	
+	 * public Reusable acquireReusable() throws NotFreeInstanceException{
+		if (reusables.size()>0){
+			Reusable r=(Reusable)reusables.lastElement();
+			reusables.remove(r);
+			return r;			
+		}
+		else{
+			throw(new NotFreeInstanceException());
+		}
+
+	}
+	 */
 	@Test
 	public void testAcquireReusable() {
-
+		//fail("Not yet implemented");
 		ReusablePool pool = ReusablePool.getInstance(); 
 		//
 		Reusable r1,r2,r3;
 		try {
-		    r1 = pool.acquireReusable();
-		    r2 = pool.acquireReusable();
-		    r3 = pool.acquireReusable();
+			r1 = pool.acquireReusable();
+			r2 = pool.acquireReusable();
+			r3 = pool.acquireReusable();
 		}catch(Exception NotFreeInstanceException){
-		    System.out.println("Todo correcto");
+			System.out.println("Todo correcto");
 		}
+		
+	}
 
-	    }
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
+	 	
+	 	public void releaseReusable(Reusable r) throws DuplicatedInstanceException {
+		if (reusables.contains(r)==false){
+			reusables.add(r);
+		}
+		else{
+			throw(new DuplicatedInstanceException());
+		}
+	}
 	 */
 	@Test
 	public void testReleaseReusable() {
@@ -81,6 +111,4 @@ public class ReusablePoolTest {
 		    	System.out.println("Todo correcto");
 		    }
 	}
-
 }
-
