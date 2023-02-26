@@ -63,7 +63,23 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testReleaseReusable() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
+		ReusablePool pool,pool2;
+	    pool = ReusablePool.getInstance();
+	    pool2 = ReusablePool.getInstance();
+	    Reusable r1,r2;
+	    try {
+		    r1 = pool.acquireReusable();
+			r2 = pool.acquireReusable();
+	    }catch(Exception DuplicatedInstanceException){
+	    	fail("Deberían existir más instancias");
+	    }
+	    try {
+		    r1 = pool2.acquireReusable();
+			r1 = pool2.acquireReusable();
+		    }catch(Exception DuplicatedInstanceException){
+		    	System.out.println("Todo correcto");
+		    }
 	}
 
 }
