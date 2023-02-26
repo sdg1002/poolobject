@@ -1,27 +1,19 @@
 /**
-
+* @author Ana Salces Mansilla
+* @author Santiago Diaz Gome-Guillamon
 *
-
 */
 
 package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.*;
-
 import java.util.logging.Logger;
-
 import org.junit.After;
-
 import org.junit.Before;
-
 import org.junit.Test;
-
 import ubu.gii.dass.c01.DuplicatedInstanceException;
-
 import ubu.gii.dass.c01.NotFreeInstanceException;
-
 import ubu.gii.dass.c01.Reusable;
-
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
@@ -94,13 +86,10 @@ public class ReusablePoolTest {
 
 	public void testAcquireReusable() {
 
-		r1 = null;
-		r2 = null;
-		r3 = null;
-
 		assertEquals(r1, null);
 		assertEquals(r2, null);
 		assertEquals(r3, null);
+
 
 		try {
 
@@ -110,13 +99,13 @@ public class ReusablePoolTest {
 			assertTrue(r2 instanceof Reusable);
 
 		} catch (Exception NotFreeInstanceException) {
-			fail();
+			fail("No se adquieren instancias correctamente");
 		}
 
 		try {
 			r3 = pool1.acquireReusable();
 		} catch (Exception NotFreeInstanceException) {
-			System.out.print("Falla correctamente");
+			System.out.print("Se realiza correctamente testAcquireReusable");
 		}
 
 	}
@@ -126,18 +115,22 @@ public class ReusablePoolTest {
 	public void testReleaseReusable() {
 		assertEquals(r1, null);
 		assertEquals(r2, null);
+		
+		
 
 		try {
-			r1 = pool1.acquireReusable();
+			r1 = pool1.acquireReusable();			
 			assertNotEquals(r1, null);
+			assertTrue(r1 instanceof Reusable);
 			pool1.releaseReusable(r1);
 
 			r2 = pool1.acquireReusable();
 			assertNotEquals(r2, null);
+			assertTrue(r2 instanceof Reusable);
 			pool1.releaseReusable(r2);
 
 		} catch (Exception DuplicatedInstanceException) {
-			fail();
+			fail("No se liberan elementos correctamente");
 		}
 
 		try {
@@ -145,7 +138,7 @@ public class ReusablePoolTest {
 			pool1.releaseReusable(r1);
 
 		} catch (Exception DuplicatedInstanceException) {
-			System.out.println("gut");
+			System.out.println("Se realiza correctamente testReleaseReusable");
 		}
 
 	}
