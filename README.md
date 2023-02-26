@@ -12,7 +12,7 @@
 
 ## Índice
 
-* Título
+* PG_C01 Monitorización del proceso de pruebas con Git-Travis-Codecov
 * [Autores](#Autores)
 * [Índice](#Índice)
 * [Objetivos de la práctica](#Objetivos-de-la-práctica) 
