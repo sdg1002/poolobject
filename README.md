@@ -59,8 +59,17 @@ Además de que en la segunda versión de los test, los dos hemos influido y mejo
 A parte de este fichero-informe de la práctica en el que hemos opinado y escrito ambos para poder explicar toda la cobertura de la práctica y los servicios utilizados.
 
 **¿Tiene calidad el conjunto de pruebas disponibles?**
+Para responder a esta pregunta, es necesario tener en cuenta dos apartados, el primero, que entendemos por "calidad" y el segundo que herramientas tenemos para medirlo.
+  En lo referente a la calidad de nuestro conjunto de pruebas, no podemos decir que consideramos que la correcta ejecución de los test lo haría exitoso, sino que la calidad vendría de lo extensivo de la cobertura de estos tests, tanto en casos posibles, como en partes del código que se comprueban.
+  Esto nos lleva a las medidas para juzgar su calidad, en este caso solo tenemos la cobertura, que hace referencia a las partes comprobadas. Esta medida, aunque muy útil no contempla algunos casos como la intención de los tests, o por ejemplo, en nuestro caso particular, el hecho de que no añadamos tests de cliente nos reduce este dato.
+  Con todo ello, y dado que los casos posibles no tienen una manera objetiva de ser medidos, podría concluir con que nuestro conjunto de pruebas tiene cierta calidad (basándome en parte en la cobertura del 75% pese a cliente), pero sin embargo este nivel de calidad sería mejorable añadiendo otro set de tests para cliente y quizá añadiendo algunos casos concretos a las pruebas si tuvieramos especificaciones más claras.
+  
+  Por último adjunto imágenes de Codecov relativas a la cobertura a lo largo del tiempo (desde que pasamos todos los tests por primera vez), e hicimos varias mejoras, y relativas a la cobertura de cada parte.
+![Avance Temporal con los Commits](imagenes/Commits.png)
+![Porcentaje Total y de cada parte](imagenes/PorcentajeTotal.png)
+![Cobertura de las partes de la carpeta main](imagenes/CarpetaMain.png)
+![Cobertura de la clase test](imagenes/CarpetaTest.png)
 
-////Cuantificar con codecov
 
 **¿Cuál es el esfuerzo invertido en realizar la actividad?**
 
@@ -77,8 +86,10 @@ Y finalmente, mínimo, fueron dos horas para realizar el informe de la activdad 
 El esfuerzo, podemos dedudir que no fue desmedido, es una actividad más que asesible con nuestro nivel actual de conocimiento informática, pero también podemos decir que cada apartado, cada test, ha necesitado su tiempo y hemos invertido en él. Así que el esfuerzo invertido podemos deducir que está en línea con la profundidadd del trabajo. //mejorar
 
 **¿Cuál es el número de fallos encontrados en el código?**
+ Durante la realización tuvimos problemas debido al patrón de diseño Singleton, ya que la posibilidad de que existiese una sola instancia a la vez, y debido a que no liberábamos adecuadamente los recursos en memoria de un test a otro, hacía que los test fallasen al estar usando los elementos en un estado diferente al estado base.
+ En lo referente a la cobertura del código, dentro de los propios tests, Codecov nos indica que contamos con líneas descubiertas, esto es debido a que en el los try catch, no realizamos un tratamiento como tal de la excepción, sino que simplemente elevamos un mensaje de error al usuario y fallamos el test, el resto de código no cubierto se encuentra la carpeta "main", cuya cobertura solo llega al 62,86%, principalmente debido a que los tests no contemplan la clase "Cliente".
+ Para una posible mejora de cobertura a futuro se podría añadir tests a la clase cliente, para completar la cobertura en main.
 
-//cuantificar
 
 ## Software
 
